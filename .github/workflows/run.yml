@@ -108,6 +108,8 @@ jobs:
         export OPENAI_BASE_URL=${{ secrets.OPENAI_BASE_URL }}
         export LANGUAGE="${{ vars.LANGUAGE }}"
         export MODEL_NAME="${{ vars.MODEL_NAME }}"
+        # 添加自定义提示环境变量
+        export PROMPT_INSTRUCTION="请优先总结与人工智能在科学计算（AI4SCI）相关的论文内容，尤其是大气海洋科学（atmospheric and oceanic science）应用。突出AI技术如何解决科学问题，并提供关键方法或结果概述。"
         
         python enhance.py --data ../data/${today}.jsonl
         
